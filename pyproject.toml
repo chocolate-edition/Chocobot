@@ -1,0 +1,80 @@
+# ----------------------------------------------------------------------
+# |  pyproject.toml
+# ----------------------------------------------------------------------
+# |  Chocobot by Toxin and Strix
+# ----------------------------------------------------------------------
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chocobot"
+
+version = "0.1.0"
+
+authors = [{ name = "Strix", email = "tce_mc@telus.net" }, { name = "Toxin" }]
+
+description = "Chocolate Edition Discord server automod"
+
+readme = "README.md"
+
+requires-python = ">=3.8"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+chocobot = "chocobot.app:main"
+
+[project.urls]
+Homepage = "https://github.com/chocolate-edition/Chocobot"
+Issues = "https://github.com/chocolate-edition/Chocobot/issues"
+
+# ----------------------------------------------------------------------
+# |  Black Extension
+# ----------------------------------------------------------------------
+[tool.black]
+line-length = 80
+
+# ----------------------------------------------------------------------
+# |  Pylint
+# ----------------------------------------------------------------------
+[tool.pylint.basic]
+module-naming-style = "snake_case"
+class-naming-style = "PascalCase"
+class-const-naming-style = "PascalCase"
+method-naming-style = "snake_case"
+function-naming-style = "snake_case"
+variable-naming-style = "snake_case"
+good-names = ["_", "f", "i", "j", "k"]
+
+[tool.pylint.classes]
+valid-classmethod-first-arg = ["self", "cls"]
+
+[tool.pylint.design]
+max-args = 10
+max-parents = 15
+
+[tool.pylint.FORMAT]
+indent-string = "    "
+
+[tool.pylint]
+disable = ["missing-function-docstring", "missing-class-docstring"]
+
+# ----------------------------------------------------------------------
+# |  Pytest
+# ----------------------------------------------------------------------
+[tool.pytest.ini_options]
+python_files = ["**/*Test.py"]
+
+# ----------------------------------------------------------------------
+# |  Setuptools
+# ----------------------------------------------------------------------
+
+[tool.setuptools.packages.find]
+where = ["src"]
