@@ -31,21 +31,20 @@ async def on_message(message: discord.Message) -> None:
         await message.delete()
         await message.channel.send(f"{message.author.mention}, please don't spam!")
 
-
     await bot.process_commands(message)
 
 @bot.command()
 async def hello(ctx: commands.Context[Any]) -> None:
     await ctx.send(f'Hello, {ctx.author.mention}!')
 
+@bot.command()
+@commands.is_owner()
+async def shutdown(ctx: commands.Context[Any])-> None:
+    await ctx.send('Shutting Down!')
+    await ctx.bot.logout()
+
 def main() -> None:
     bot.run(TOKEN)
 
 if __name__ == "__main__":
     main()
-
-@bot.command()
-@commands.is_owner()
-async def shutdown(ctx: commands.Context[Any])-> None:
-    await ctx.send(f'Shutting Down!')
-    await ctx.bot.logout()
