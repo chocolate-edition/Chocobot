@@ -27,9 +27,10 @@ async def on_message(message: discord.Message) -> None:
 
     # Prevent spam (2 or more identical messages in a row)
     messages: list[discord.Message] = [msg async for msg in message.channel.history(limit=2)]
-    if all(msg.content == message.content for msg in messages):
-        await message.delete()
-        await message.channel.send(f"{message.author.mention}, please don't spam!")
+    if not message.author.bot:
+        if all(msg.content == message.content for msg in messages):
+            await message.delete()
+            await message.channel.send(f"{message.author.mention}, please don't spam!")
 
     await bot.process_commands(message)
 
