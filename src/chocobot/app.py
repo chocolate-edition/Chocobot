@@ -1,5 +1,6 @@
 """main entrypoint for the app"""
 import os
+import sys
 from typing import Any
 import discord
 from discord.ext import commands
@@ -36,6 +37,12 @@ async def on_message(message: discord.Message) -> None:
 @bot.command()
 async def hello(ctx: commands.Context[Any]) -> None:
     await ctx.send(f'Hello, {ctx.author.mention}!')
+
+@bot.command()
+@commands.is_owner()
+async def shutdown(ctx: commands.Context[Any])-> None:
+    await ctx.send('Shutting Down!')
+    sys.exit(0)
 
 def main() -> None:
     bot.run(TOKEN)
