@@ -29,6 +29,8 @@ async def on_message(message: discord.Message) -> None:
     # Prevent spam (2 or more identical messages in a row)
     messages: list[discord.Message] = [msg async for msg in message.channel.history(limit=2)]
     if all(msg.content == message.content for msg in messages):
+        if any(role.name == 'admin' for role in message.author.roles):
+            return
         await message.delete()
         await message.channel.send(f"{message.author.mention}, please don't spam!")
 
@@ -40,7 +42,7 @@ async def hello(ctx: commands.Context[Any]) -> None:
 
 @bot.command()
 @commands.is_owner()
-async def shutdown(ctx: commands.Context[Any])-> None:
+async def shutdown(ctx: commands.Context[Any]) -> None:
     await ctx.send('Shutting Down!')
     sys.exit(0)
 
