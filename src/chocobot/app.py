@@ -1,6 +1,7 @@
 """main entrypoint for the app"""
 import os
 import sys
+from .constants.constants import MATRIX_RESPONSE, CANDLES_RESPONSE, SPARK_RESPONSNE, LOGS_RESPONSE
 from typing import Any
 import discord
 from discord.ext import commands
@@ -40,6 +41,22 @@ async def on_message(message: discord.Message) -> None:
 @bot.command()
 async def hello(ctx: commands.Context[Any]) -> None:
     await ctx.send(f'Hello, {ctx.author.mention}!')
+
+@bot.command()
+async def matrix(ctx: commands.Context[Any]) -> None:
+    await ctx.send(MATRIX_RESPONSE)
+
+@bot.command()
+async def candles(ctx: commands.Context[Any]) -> None:
+    await ctx.send(CANDLES_RESPONSE)
+
+@bot.command()
+async def spark(ctx: commands.Context[Any]) -> None:
+    await ctx.send(SPARK_RESPONSNE)
+
+@bot.command()
+async def log(ctx: commands.Context[Any]) -> None:
+    await ctx.send(LOGS_RESPONSE)
 
 @bot.command()
 @commands.is_owner()
