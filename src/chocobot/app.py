@@ -1,7 +1,7 @@
 """main entrypoint for the app"""
 import os
 import sys
-from .constants import MATRIX_RESPONSE, CANDLES_RESPONSE, SPARK_RESPONSNE, LATEST_RESPONSE
+from .constants.constants import MATRIX_RESPONSE, CANDLES_RESPONSE, SPARK_RESPONSNE, LOGS_RESPONSE
 from typing import Any
 import discord
 from discord.ext import commands
@@ -52,8 +52,8 @@ async def spark(ctx: commands.Context[Any]) -> None:
     await ctx.send(SPARK_RESPONSNE)
 
 @bot.command()
-async def latest(ctx: commands.Context[Any]) -> None:
-    await ctx.send(LATEST_RESPONSE)
+async def log(ctx: commands.Context[Any]) -> None:
+    await ctx.send(LOGS_RESPONSE)
 
 @bot.command()
 @commands.is_owner()

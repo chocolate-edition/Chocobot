@@ -36,7 +36,7 @@ SPARK_RESPONSNE='''
 /spark profiler start --thread * --timeout 50'''
 
 
-LATEST_RESPONSE='''
+LOGS_RESPONSE='''
 **Start Minecraft:** Open Minecraft and play until you encounter the crash/error. Close Minecraft and keep it closed.
 
 **Find Logs:**
