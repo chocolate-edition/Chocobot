@@ -1,7 +1,7 @@
 """main entrypoint for the app"""
 import os
 import sys
-from .constants.constants import MATRIX_RESPONSE, CANDLES_RESPONSE, SPARK_RESPONSNE, LOGS_RESPONSE
+from chocobot.constants import constants
 from typing import Any
 import discord
 from discord.ext import commands
@@ -44,19 +44,19 @@ async def hello(ctx: commands.Context[Any]) -> None:
 
 @bot.command()
 async def matrix(ctx: commands.Context[Any]) -> None:
-    await ctx.send(MATRIX_RESPONSE)
+    await ctx.send(constants.MATRIX_RESPONSE)
 
 @bot.command()
 async def candles(ctx: commands.Context[Any]) -> None:
-    await ctx.send(CANDLES_RESPONSE)
+    await ctx.send(constants.CANDLES_RESPONSE)
 
 @bot.command()
 async def spark(ctx: commands.Context[Any]) -> None:
-    await ctx.send(SPARK_RESPONSNE)
+    await ctx.send(constants.SPARK_RESPONSE)
 
 @bot.command()
 async def log(ctx: commands.Context[Any]) -> None:
-    await ctx.send(LOGS_RESPONSE)
+    await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
 @commands.is_owner()

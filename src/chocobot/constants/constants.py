@@ -1,4 +1,5 @@
-MATRIX_RESPONSE='''
+class Constants:
+     MATRIX_RESPONSE='''
 **How do I use Matrix Enchanting?**
 You can generate \"enchantment pieces\" using XP and Lapis and place them on a grid. Two pieces of the same type can be merged to upgrade the piece\'s level by placing one piece on top of the other. You can influence what kind of pieces you get using candles.
 
@@ -11,7 +12,7 @@ Bookshelves increases the maximum amount of "blocks" you can create.
 **What is candle influencing?**
 Different coloured candles can influence the likelihood of an enchantment being rolled. For specific information, use `!candles`'''
 
-CANDLES_RESPONSE='''
+     CANDLES_RESPONSE='''
 __**Here's how different coloured candles influence the Matrix Enchantment system!**__
 White: Unbreaking
 Orange: Fire Protection, Torrent, Lavewaxed
@@ -31,12 +32,12 @@ Red: Fire Aspect, Flame
 Black: Smite, Projectile Protection'''
 
 
-SPARK_RESPONSNE='''
+     SPARK_RESPONSE='''
 **Please use the following command in-game:**
 /spark profiler start --thread * --timeout 50'''
 
 
-LOGS_RESPONSE='''
+     LOG_RESPONSE='''
 **Start Minecraft:** Open Minecraft and play until you encounter the crash/error. Close Minecraft and keep it closed.
 
 **Find Logs:**
