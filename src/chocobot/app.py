@@ -59,6 +59,22 @@ async def log(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
+async def java(ctx: commands.Context[Any]) -> None:
+    await ctx.send(constants.JAVA_RESPONSE)
+
+@bot.command()
+async def cdu(ctx: commands.Context[Any]) -> None:
+    await ctx.send(constants.CDU_RESPONSE)
+
+@bot.command()
+async def mclogs(ctx: commands.Context[Any]) -> None:
+    await ctx.send(constants.MCLOGS_RESPONSE)
+
+@bot.command()
+async def eyes(ctx: commands.Context[Any]) -> None:
+    await ctx.send(constants.EYES_RESPONSE)
+
+@bot.command()
 @commands.is_owner()
 async def shutdown(ctx: commands.Context[Any]) -> None:
     await ctx.send('Shutting Down!')
