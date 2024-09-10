@@ -68,3 +68,15 @@ Black: Smite, Projectile Protection'''
      MCLOGS_RESPONSE="Please send your log with [mclogs!](https://mclo.gs/)"
 
      EYES_RESPONSE='''Your goal in this pack is to craft all 16 of the '[eyes](https://thechocolateedition.wiki.gg/wiki/Eyes)' from the End Remastered mod, you can see their crafting recipes in JEI and in your Quest Book. Crafting these eyes unlocks new dimensions and items, for example after crafting 3 eyes you can access the Nether! A full list of [locked items can be found here](<https://thechocolateedition.wiki.gg/wiki/Locked_Items>)'''
+
+     CHOCOBOT_RESPONSE='''**A list of all of chocobot's commands:**
+`!matrix`: The new enchanting system
+`!candles`: The influences of each candle
+`!spark`:  How to create a spark report
+`!log`: How to get your latest log
+`!java`: Link to proper java version
+`!cdu`: Link to the offical server's discord
+`!mclogs`: Link to the mclogs website
+`!eyes`: explains the eyes and locked items
+`!chocobot:` shows this message
+'''

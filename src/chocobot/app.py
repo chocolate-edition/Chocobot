@@ -75,6 +75,10 @@ async def eyes(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.EYES_RESPONSE)
 
 @bot.command()
+async def chocobot(ctx: commands.Context[Any]) -> None:
+    await ctx.send(constants.CHOCOBOT_RESPONSE)
+
+@bot.command()
 @commands.is_owner()
 async def shutdown(ctx: commands.Context[Any]) -> None:
     await ctx.send('Shutting Down!')
