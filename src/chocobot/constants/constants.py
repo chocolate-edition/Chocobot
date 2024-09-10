@@ -63,7 +63,7 @@ Black: Smite, Projectile Protection'''
 
      JAVA_RESPONSE="Chocolate Edition requires Java 17, [download it here!](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)"
 
-     CDU_RESPONSE="The Official Chocolate Edition Server is automatically included on the multiplayer list in game, it is hosted by Craft Down Under (CDU)"
+     CDU_RESPONSE="The Official Chocolate Edition Server is automatically included on the multiplayer list in game, it is hosted by [Craft Down Under (CDU)](https://discord.gg/playcdu)"
 
      MCLOGS_RESPONSE="Please send your log with [mclogs!](https://mclo.gs/)"
 
