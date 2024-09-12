@@ -1,4 +1,5 @@
 class Constants:
+     """Constants used for our autoreply system"""
      MATRIX_RESPONSE='''
 **How do I use Matrix Enchanting?**
 You can generate \"enchantment pieces\" using XP and Lapis and place them on a grid. Two pieces of the same type can be merged to upgrade the piece\'s level by placing one piece on top of the other. You can influence what kind of pieces you get using candles.
