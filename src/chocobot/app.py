@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 TOKEN: str = os.environ['DISCORD_TOKEN']
+CF_TOKEN: str = os.environ['CURSE_FORGE_TOKEN']
 
 intents = discord.Intents.default()
 intents.message_content = True
