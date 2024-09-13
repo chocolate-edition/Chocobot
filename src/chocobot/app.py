@@ -1,8 +1,6 @@
 """main entrypoint for the app"""
 import os
 import sys
-import requests
-import html2text
 from chocobot.constants import constants
 from chocobot.curseforge import curseforge
 from typing import Any
@@ -24,7 +22,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready() -> None:
     print(f'{bot.user} has connected to Discord!')
-
+   # curseforge.update_cf()
 
 
 @bot.event
@@ -64,8 +62,12 @@ async def log(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
-async def link(ctx: commands.Context[Any]) -> None:
-    await ctx.send(curseforge.get_link())
+async def client(ctx: commands.Context[Any]) -> None:
+    await ctx.send(curseforge.get_client_file())
+
+@bot.command()
+async def server(ctx: commands.Context[Any]) -> None:
+    await ctx.send(curseforge.get_server_file())
 
 @bot.command()
 async def changelog(ctx: commands.Context[Any]) -> None:
@@ -76,6 +78,13 @@ async def changelog(ctx: commands.Context[Any]) -> None:
 async def shutdown(ctx: commands.Context[Any]) -> None:
     await ctx.send('Shutting Down!')
     sys.exit(0)
+
+@bot.command()
+@commands.is_owner()
+async def updatecf(ctx: commands.Context[Any]) -> None:
+    curseforge.update_cf()
+    await ctx.send('Updated!')
+
 
 def main() -> None:
     bot.run(TOKEN)
