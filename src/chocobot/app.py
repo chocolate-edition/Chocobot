@@ -66,21 +66,6 @@ async def log(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
-async def client(ctx: commands.Context[Any]) -> None:
-    """Link to the latest client pack"""
-    await ctx.send(curseforge.get_client_file())
-
-@bot.command()
-async def server(ctx: commands.Context[Any]) -> None:
-    """Link to the latest server pack"""
-    await ctx.send(curseforge.get_server_file())
-
-@bot.command()
-async def changelog(ctx: commands.Context[Any]) -> None:
-    """The latest changelog"""
-    await ctx.send(curseforge.get_change_log())
-
-@bot.command()
 async def java(ctx: commands.Context[Any]) -> None:
     """Link to proper java version"""
     await ctx.send(constants.JAVA_RESPONSE)
@@ -99,6 +84,21 @@ async def mclogs(ctx: commands.Context[Any]) -> None:
 async def eyes(ctx: commands.Context[Any]) -> None:
     """Explains the eyes and locked items"""
     await ctx.send(constants.EYES_RESPONSE)
+
+@bot.command()
+async def client(ctx: commands.Context[Any]) -> None:
+    """Link to the latest client pack"""
+    await ctx.send(curseforge.get_client_file())
+
+@bot.command()
+async def server(ctx: commands.Context[Any]) -> None:
+    """Link to the latest server pack"""
+    await ctx.send(curseforge.get_server_file())
+
+@bot.command()
+async def changelog(ctx: commands.Context[Any]) -> None:
+    """The latest changelog"""
+    await ctx.send(curseforge.get_change_log())
 
 @bot.command()
 @commands.is_owner()
