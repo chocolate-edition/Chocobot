@@ -24,7 +24,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready() -> None:
     print(f'{bot.user} has connected to Discord!')
-    curseforge.update_cf()
+
 
 
 @bot.event
@@ -65,26 +65,16 @@ async def log(ctx: commands.Context[Any]) -> None:
 
 @bot.command()
 async def link(ctx: commands.Context[Any]) -> None:
-    await ctx.send(curseforge.cf_link)
+    await ctx.send(curseforge.get_link())
 
 @bot.command()
 async def changelog(ctx: commands.Context[Any]) -> None:
-    await ctx.send(curseforge.change_log)
-
-@bot.command()
-async def debug(ctx: commands.Context[Any]) -> None:
-    await ctx.send(curseforge.file_id)
+    await ctx.send(curseforge.get_change_log())
 
 @bot.command()
 @commands.is_owner()
 async def shutdown(ctx: commands.Context[Any]) -> None:
     await ctx.send('Shutting Down!')
-    sys.exit(0)
-
-@bot.command()
-@commands.is_owner()
-async def updatecf(ctx: commands.Context[Any]) -> None:
-    await ctx.send('Updated!')
     sys.exit(0)
 
 def main() -> None:

@@ -11,18 +11,17 @@ class Curseforge:
           'x-api-key': CF_TOKEN
      }
 
-     def __init__(self):
-          self.cf_file_data = None
-          self.file_id = None
-          self.cf_link = None
-          self.cf_change_log = None
-          self.change_log = None
+     def get_link(self) -> str:
+          """Returns a link to the CF page of the most recent file"""
+          cf_file_data = requests.get('https://api.curseforge.com/v1/mods/'+ Curseforge.CF_PROJECT_ID +'/files', headers = Curseforge.headers).json()
+          file_id = str(cf_file_data['data'][0]['id'])
+          cf_link ='https://www.curseforge.com/minecraft/modpacks/mc-chocolate-edition/files/' + file_id
+          return cf_link
 
-     def update_cf(self) -> None:
-          self.cf_file_data = requests.get('https://api.curseforge.com/v1/mods/'+ Curseforge.CF_PROJECT_ID +'/files', headers = Curseforge.headers).json()
-          self.file_id = str(self.cf_file_data['data'][0]['id'])
-          self.cf_link ='https://www.curseforge.com/minecraft/modpacks/mc-chocolate-edition/files/' + self.file_id
-
-          self.cf_change_log = requests.get('https://api.curseforge.com/v1/mods/'+ Curseforge.CF_PROJECT_ID +'/files/' + self.file_id + '/changelog', headers = Curseforge.headers).json()
-          self.change_log = html2text.html2text(str(self.cf_change_log['data']))
-
+     def get_change_log(self) -> str:
+          """Rerturns the change log of the most recent update"""
+          cf_file_data = requests.get('https://api.curseforge.com/v1/mods/'+ Curseforge.CF_PROJECT_ID +'/files', headers = Curseforge.headers).json()
+          file_id = str(cf_file_data['data'][0]['id'])
+          cf_change_log = requests.get('https://api.curseforge.com/v1/mods/'+ Curseforge.CF_PROJECT_ID +'/files/' + file_id + '/changelog', headers = Curseforge.headers).json()
+          change_log = html2text.html2text(str(cf_change_log['data']))
+          return change_log
