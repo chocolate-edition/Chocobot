@@ -47,41 +47,70 @@ async def hello(ctx: commands.Context[Any]) -> None:
 
 @bot.command()
 async def matrix(ctx: commands.Context[Any]) -> None:
+    """The new enchanting system"""
     await ctx.send(constants.MATRIX_RESPONSE)
 
 @bot.command()
 async def candles(ctx: commands.Context[Any]) -> None:
+    """The influences of each candle"""
     await ctx.send(constants.CANDLES_RESPONSE)
 
 @bot.command()
 async def spark(ctx: commands.Context[Any]) -> None:
+    """How to create a spark report"""
     await ctx.send(constants.SPARK_RESPONSE)
 
 @bot.command()
 async def log(ctx: commands.Context[Any]) -> None:
+    """How to get your latest log"""
     await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
 async def client(ctx: commands.Context[Any]) -> None:
+    """Link to the latest client pack"""
     await ctx.send(curseforge.get_client_file())
 
 @bot.command()
 async def server(ctx: commands.Context[Any]) -> None:
+    """Link to the latest server pack"""
     await ctx.send(curseforge.get_server_file())
 
 @bot.command()
 async def changelog(ctx: commands.Context[Any]) -> None:
+    """The latest changelog"""
     await ctx.send(curseforge.get_change_log())
+
+@bot.command()
+async def java(ctx: commands.Context[Any]) -> None:
+    """Link to proper java version"""
+    await ctx.send(constants.JAVA_RESPONSE)
+
+@bot.command()
+async def cdu(ctx: commands.Context[Any]) -> None:
+    """Link to the offical server's discord"""
+    await ctx.send(constants.CDU_RESPONSE)
+
+@bot.command()
+async def mclogs(ctx: commands.Context[Any]) -> None:
+    """Link to the mclogs website"""
+    await ctx.send(constants.MCLOGS_RESPONSE)
+
+@bot.command()
+async def eyes(ctx: commands.Context[Any]) -> None:
+    """Explains the eyes and locked items"""
+    await ctx.send(constants.EYES_RESPONSE)
 
 @bot.command()
 @commands.is_owner()
 async def shutdown(ctx: commands.Context[Any]) -> None:
+    """Shuts chocobot down"""
     await ctx.send('Shutting Down!')
     sys.exit(0)
 
 @bot.command()
 @commands.is_owner()
 async def updatecf(ctx: commands.Context[Any]) -> None:
+    """Updates the CF link"""
     curseforge.update_cf()
     await ctx.send('Updated!')
 
