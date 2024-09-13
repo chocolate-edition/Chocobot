@@ -30,6 +30,7 @@ class Curseforge:
           return Curseforge.change_log
 
      def update_cf(self) -> None:
+          """Updates the CF links/log"""
           Curseforge.cf_file_data = requests.get('https://api.curseforge.com/v1/mods/'+ Curseforge.CF_PROJECT_ID +'/files', headers = Curseforge.headers).json()
           Curseforge.file_id = str(Curseforge.cf_file_data['data'][0]['id'])
           Curseforge.cf_client_file ='https://www.curseforge.com/minecraft/modpacks/mc-chocolate-edition/files/' + Curseforge.file_id
