@@ -101,6 +101,12 @@ async def changelog(ctx: commands.Context[Any]) -> None:
     await ctx.send(curseforge.get_change_log())
 
 @bot.command()
+async def downloads(ctx: commands.Context[Any]) -> None:
+    """The download count"""
+
+    await ctx.send('The pack has ' + curseforge.get_downloads() + ' downloads')
+
+@bot.command()
 @commands.is_owner()
 async def shutdown(ctx: commands.Context[Any]) -> None:
     """Shuts chocobot down"""
