@@ -1,8 +1,6 @@
 """main entrypoint for the app"""
 import os
 import sys
-import requests
-import html2text
 from chocobot.constants import constants
 from chocobot.curseforge import curseforge
 from typing import Any
@@ -13,14 +11,6 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 TOKEN: str = os.environ['DISCORD_TOKEN']
-CF_TOKEN: str = os.environ['CURSE_FORGE_TOKEN']
-CF_PROJECT_ID = '888414'
-
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'x-api-key': CF_TOKEN
-}
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -29,19 +19,10 @@ intents.messages = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-cf_file_data = requests.get('https://api.curseforge.com/v1/mods/'+ CF_PROJECT_ID +'/files', headers = headers).json()
-file_ID = str(cf_file_data['data'][0]['id'])
-cf_link ='https://www.curseforge.com/minecraft/modpacks/mc-chocolate-edition/files/' + file_ID
-
-cf_change_log = requests.get('https://api.curseforge.com/v1/mods/'+ CF_PROJECT_ID +'/files/' + file_ID + '/changelog', headers = headers).json()
-change_log = html2text.html2text(str(cf_change_log['data']))
-
-
 @bot.event
 async def on_ready() -> None:
     print(f'{bot.user} has connected to Discord!')
    # curseforge.update_cf()
-
 
 
 @bot.event
@@ -85,17 +66,6 @@ async def log(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
-async def link(ctx: commands.Context[Any]) -> None:
-    await ctx.send(cf_link)
-
-@bot.command()
-async def changelog(ctx: commands.Context[Any]) -> None:
-    await ctx.send(change_log)
-
-@bot.command()
-async def debug(ctx: commands.Context[Any]) -> None:
-    await ctx.send(file_ID)
-
 async def java(ctx: commands.Context[Any]) -> None:
     """Link to proper java version"""
     await ctx.send(constants.JAVA_RESPONSE)
@@ -114,7 +84,6 @@ async def mclogs(ctx: commands.Context[Any]) -> None:
 async def eyes(ctx: commands.Context[Any]) -> None:
     """Explains the eyes and locked items"""
     await ctx.send(constants.EYES_RESPONSE)
-
 
 @bot.command()
 async def client(ctx: commands.Context[Any]) -> None:
