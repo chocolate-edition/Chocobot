@@ -4,6 +4,7 @@ import sys
 import requests
 import html2text
 from chocobot.constants import constants
+from chocobot.curseforge import curseforge
 from typing import Any
 import discord
 from discord.ext import commands
@@ -39,6 +40,8 @@ change_log = html2text.html2text(str(cf_change_log['data']))
 @bot.event
 async def on_ready() -> None:
     print(f'{bot.user} has connected to Discord!')
+   # curseforge.update_cf()
+
 
 
 @bot.event
@@ -114,11 +117,40 @@ async def eyes(ctx: commands.Context[Any]) -> None:
 
 
 @bot.command()
+async def client(ctx: commands.Context[Any]) -> None:
+    """Link to the latest client pack"""
+    await ctx.send(curseforge.get_client_file())
+
+@bot.command()
+async def server(ctx: commands.Context[Any]) -> None:
+    """Link to the latest server pack"""
+    await ctx.send(curseforge.get_server_file())
+
+@bot.command()
+async def changelog(ctx: commands.Context[Any]) -> None:
+    """The latest changelog"""
+    await ctx.send(curseforge.get_change_log())
+
+@bot.command()
+async def downloads(ctx: commands.Context[Any]) -> None:
+    """The download count"""
+
+    await ctx.send('The pack has ' + curseforge.get_downloads() + ' downloads')
+
+@bot.command()
 @commands.is_owner()
 async def shutdown(ctx: commands.Context[Any]) -> None:
     """Shuts chocobot down"""
     await ctx.send('Shutting Down!')
     sys.exit(0)
+
+@bot.command()
+@commands.is_owner()
+async def updatecf(ctx: commands.Context[Any]) -> None:
+    """Updates the CF link"""
+    curseforge.update_cf()
+    await ctx.send('Updated!')
+
 
 def main() -> None:
     bot.run(TOKEN)
