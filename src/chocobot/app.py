@@ -38,10 +38,15 @@ async def on_member_join(member):
     else:
         print(f"Role '{constants.AUTO_ROLE}' not found.")
 
- @bot.event
- async def on_message(message: discord.Message) -> None:
+@bot.event
+async def on_message(message: discord.Message) -> None:
     if message.author == bot.user:
         return
+
+    if "nexus" in message.content:
+        await message.channel.send(constants.NEXUS_RESPONSE)
+
+
    # if any(role.name == 'admin' for role in message.author.roles):
        # await bot.process_commands(message)
        # return
