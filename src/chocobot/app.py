@@ -27,7 +27,16 @@ async def on_ready() -> None:
 
 @bot.event
 async def on_member_join(member):
-            print(f"Role  not found.")
+    role = discord.utils.get(member.guild.roles, name=constants.AUTO_ROLE)
+
+    if role:
+        try:
+            await member.add_roles(role)
+            print(f"Assigned {constants.AUTO_ROLE} to {member.name}")
+        except discord.Forbidden:
+            print("The bot does not have permission to assign roles.")
+    else:
+        print(f"Role '{constants.AUTO_ROLE}' not found.")
 
 @bot.event
 async def on_message(message: discord.Message) -> None:
