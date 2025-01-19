@@ -69,4 +69,6 @@ Black: Smite, Projectile Protection'''
 
      EYES_RESPONSE='''Your goal in this pack is to craft all 16 of the '[eyes](https://thechocolateedition.wiki.gg/wiki/Eyes)' from the End Remastered mod, you can see their crafting recipes in JEI and in your Quest Book. Crafting these eyes unlocks new dimensions and items, for example after crafting 3 eyes you can access the Nether! A full list of [locked items can be found here](<https://thechocolateedition.wiki.gg/wiki/Locked_Items>)'''
 
-     AUTO_Role='''🍫 Chocolatier'''
+     NEXUS_RESPONSE='''Please see https://discord.com/channels/945364406609514517/1269397691297693809 for an overview of our future update plans'''
+
+     AUTO_ROLE='''🍫 Chocolatier'''
