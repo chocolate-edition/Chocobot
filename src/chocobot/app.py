@@ -25,13 +25,13 @@ async def on_ready() -> None:
    # curseforge.update_cf()
 
 
-@bot.event
-async def on_message(message: discord.Message) -> None:
+ @bot.event
+ async def on_message(message: discord.Message) -> None:
     if message.author == bot.user:
         return
-    if any(role.name == 'admin' for role in message.author.roles):
-        await bot.process_commands(message)
-        return
+   # if any(role.name == 'admin' for role in message.author.roles):
+       # await bot.process_commands(message)
+       # return
 
     # Prevent spam (2 or more identical messages in a row)
     # messages: list[discord.Message] = [msg async for msg in message.channel.history(limit=2)]
