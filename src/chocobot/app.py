@@ -16,6 +16,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
 intents.messages = True
+intents.members =  True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -24,6 +25,9 @@ async def on_ready() -> None:
     print(f'{bot.user} has connected to Discord!')
    # curseforge.update_cf()
 
+@bot.event
+async def on_member_join(member):
+            print(f"Role  not found.")
 
 @bot.event
 async def on_message(message: discord.Message) -> None:
