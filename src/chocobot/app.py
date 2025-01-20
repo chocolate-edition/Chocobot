@@ -124,19 +124,19 @@ async def downloads(ctx: commands.Context[Any]) -> None:
 
     await ctx.send('The pack has ' + curseforge.get_downloads() + ' downloads')
 
-@bot.command()
-@commands.is_owner()
-async def shutdown(ctx: commands.Context[Any]) -> None:
-    """Shuts chocobot down"""
-    await ctx.send('Shutting Down!')
-    sys.exit(0)
+#@bot.command()
+#@commands.is_owner()
+#async def shutdown(ctx: commands.Context[Any]) -> None:
+#    """Shuts chocobot down"""
+#    await ctx.send('Shutting Down!')
+#    sys.exit(0)
 
-@bot.command()
-@commands.is_owner()
-async def updatecf(ctx: commands.Context[Any]) -> None:
-    """Updates the CF link"""
-    curseforge.update_cf()
-    await ctx.send('Updated!')
+#@bot.command()
+#@commands.is_owner()
+#async def updatecf(ctx: commands.Context[Any]) -> None:
+#    """Updates the CF link"""
+#    curseforge.update_cf()
+#    await ctx.send('Updated!')
 
 
 def main() -> None:
