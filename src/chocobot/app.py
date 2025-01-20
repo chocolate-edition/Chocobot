@@ -113,10 +113,10 @@ async def server(ctx: commands.Context[Any]) -> None:
     """Link to the latest server pack"""
     await ctx.send(curseforge.get_server_file())
 
-@bot.command()
-async def changelog(ctx: commands.Context[Any]) -> None:
-    """The latest changelog"""
-    await ctx.send(curseforge.get_change_log())
+#@bot.command()
+#async def changelog(ctx: commands.Context[Any]) -> None:
+#    """The latest changelog"""
+#    await ctx.send(curseforge.get_change_log())
 
 @bot.command()
 async def downloads(ctx: commands.Context[Any]) -> None:
