@@ -1,5 +1,5 @@
 class Constants:
-     MATRIX_RESPONSE='''
+    MATRIX_RESPONSE = """
 **How do I use Matrix Enchanting?**
 You can generate \"enchantment pieces\" using XP and Lapis and place them on a grid. Two pieces of the same type can be merged to upgrade the piece\'s level by placing one piece on top of the other. You can influence what kind of pieces you get using candles.
 
@@ -10,9 +10,9 @@ Either you have incompatible enchantments (like Fortune/Silk Touch) or you have 
 Bookshelves increases the maximum amount of "blocks" you can create.
 
 **What is candle influencing?**
-Different coloured candles can influence the likelihood of an enchantment being rolled. For specific information, use `!candles`'''
+Different coloured candles can influence the likelihood of an enchantment being rolled. For specific information, use `!candles`"""
 
-     CANDLES_RESPONSE='''
+    CANDLES_RESPONSE = """
 __**Here's how different coloured candles influence the Matrix Enchantment system!**__
 White: Unbreaking
 Orange: Fire Protection, Torrent, Lavewaxed
@@ -29,15 +29,13 @@ Blue: Efficiency, Sharpness, Lure, Power, Impaling, Quick Charge
 Brown: Aqua Affinity, Depth Strider, Riptide
 Green: Thorns, Piercing
 Red: Fire Aspect, Flame
-Black: Smite, Projectile Protection'''
+Black: Smite, Projectile Protection"""
 
-
-     SPARK_RESPONSE='''
+    SPARK_RESPONSE = """
 **Please use the following command in-game:**
-/spark profiler start --thread * --timeout 50'''
+/spark profiler start --thread * --timeout 50"""
 
-
-     LOG_RESPONSE='''
+    LOG_RESPONSE = """
 **Start Minecraft:** Open Minecraft and play until you encounter the crash/error. Close Minecraft and keep it closed.
 
 **Find Logs:**
@@ -58,17 +56,16 @@ Black: Smite, Projectile Protection'''
 
 **Use mclo.gs:** Go to https://mclo.gs/, paste the contents (Ctrl-V or Cmd-V) into the large field or add the file.
 
-**Submit and Share:** Click "Submit Anonymously." After submitting, copy the URL from the address bar and share it in ⁠https://discord.com/channels/945364406609514517/1139306430046949498 to the person who needs the log. Wait for further instructions.'''
+**Submit and Share:** Click "Submit Anonymously." After submitting, copy the URL from the address bar and share it in ⁠https://discord.com/channels/945364406609514517/1139306430046949498 to the person who needs the log. Wait for further instructions."""
 
+    JAVA_RESPONSE = "Chocolate Edition requires Java 17, [download it here!](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)"
 
-     JAVA_RESPONSE="Chocolate Edition requires Java 17, [download it here!](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)"
+    CDU_RESPONSE = "The Official Chocolate Edition Server is automatically included on the multiplayer list in game, it is hosted by [Craft Down Under (CDU)](https://discord.gg/playcdu)"
 
-     CDU_RESPONSE="The Official Chocolate Edition Server is automatically included on the multiplayer list in game, it is hosted by [Craft Down Under (CDU)](https://discord.gg/playcdu)"
+    MCLOGS_RESPONSE = "Please send your log with [mclogs!](https://mclo.gs/)"
 
-     MCLOGS_RESPONSE="Please send your log with [mclogs!](https://mclo.gs/)"
+    EYES_RESPONSE = """Your goal in this pack is to craft all 16 of the '[eyes](https://thechocolateedition.wiki.gg/wiki/Eyes)' from the End Remastered mod, you can see their crafting recipes in JEI and in your Quest Book. Crafting these eyes unlocks new dimensions and items, for example after crafting 3 eyes you can access the Nether! A full list of locked items can be found in the quest book or on our [wiki](<https://thechocolateedition.wiki.gg/wiki/Locked_Items>)"""
 
-     EYES_RESPONSE='''Your goal in this pack is to craft all 16 of the '[eyes](https://thechocolateedition.wiki.gg/wiki/Eyes)' from the End Remastered mod, you can see their crafting recipes in JEI and in your Quest Book. Crafting these eyes unlocks new dimensions and items, for example after crafting 3 eyes you can access the Nether! A full list of locked items can be found in the quest book or on our [wiki](<https://thechocolateedition.wiki.gg/wiki/Locked_Items>)'''
+    NEXUS_RESPONSE = """Please see https://discord.com/channels/945364406609514517/1269397691297693809 for an overview of our future update plans"""
 
-     NEXUS_RESPONSE='''Please see https://discord.com/channels/945364406609514517/1269397691297693809 for an overview of our future update plans'''
-
-     AUTO_ROLE='''🍫 Chocolatier'''
+    AUTO_ROLE = """🍫 Chocolatier"""
