@@ -104,12 +104,12 @@ async def eyes(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.EYES_RESPONSE)
 
 @bot.command()
-async def faqBackup(ctx: commands.Context[Any]) -> None:
+async def backup(ctx: commands.Context[Any]) -> None:
     """Explains how to access the pack backups"""
     await ctx.send(constants.FAQ_BACKUP)
 
 @bot.command()
-async def faqUpdate(ctx: commands.Context[Any]) -> None:
+async def update(ctx: commands.Context[Any]) -> None:
     """Explains how to update the pack"""
     await ctx.send(constants.FAQ_UPDATE)
 
