@@ -70,7 +70,7 @@ Black: Smite, Projectile Protection"""
 
     AUTO_ROLE = """🍫 Chocolatier"""
 
-    FAQ_BACKUP = """https://discord.com/channels/945364406609514517/1331365415275859979"""
+    FAQ_BACKUP = """https://discord.com/channels/945364406609514517/1331833556414234724"""
 
-    FAQ_UPDATE = """https://discord.com/channels/945364406609514517/1331370294941581364"""
+    FAQ_UPDATE = """https://discord.com/channels/945364406609514517/1331832784188342362"""
 
