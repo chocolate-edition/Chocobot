@@ -17,6 +17,7 @@ intents.message_content = True
 intents.guilds = True
 intents.messages = True
 intents.members =  True
+spamQueue=[]
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -51,11 +52,22 @@ async def on_message(message: discord.Message) -> None:
        # await bot.process_commands(message)
        # return
 
+
+    for m in spamQueue:
+        if(m.author.name == message.author.name):
+            print("e")
+
+    spamQueue.append(message)
+
+   # if(message.author.global_name )
+    if(spamQueue.qsize() > 100):
+        spamQueue.pop(0)
+
     # Prevent spam (2 or more identical messages in a row)
-    # messages: list[discord.Message] = [msg async for msg in message.channel.history(limit=2)]
-    # if all(msg.content == message.content and msg.author == message.author for msg in messages):
-       # await message.delete()
-       # await message.channel.send(f"{message.author.mention}, please don't spam!")
+    #messages: list[discord.Message] = [msg async for msg in message.channel.history(limit=2)]
+    #if all(msg.content == message.content and msg.author == message.author for msg in messages):
+    #   await message.delete()
+    #   await message.channel.send(f"{message.author.mention}, please don't spam!")
 
     await bot.process_commands(message)
 
