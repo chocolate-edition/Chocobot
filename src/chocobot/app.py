@@ -17,7 +17,9 @@ intents.message_content = True
 intents.guilds = True
 intents.messages = True
 intents.members =  True
-spamQueue=[]
+spamQueue: list[Any]=[]
+
+
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -51,16 +53,25 @@ async def on_message(message: discord.Message) -> None:
    # if any(role.name == 'admin' for role in message.author.roles):
        # await bot.process_commands(message)
        # return
-
-
+    print(message.content)
+    isSpam = False
+    m: discord.Message
     for m in spamQueue:
-        if(m.author.name == message.author.name):
-            print("e")
+        if(m.author.name == message.author.name and m.content == message.content and not message.content == "" ):
+
+            await message.delete()
+            await message.channel.send(f"{message.author.mention}, please don't spam!")
+            isSpam = True
+
+    if(isSpam):
+       # message.author.timeout.w
+        return
+
 
     spamQueue.append(message)
 
    # if(message.author.global_name )
-    if(spamQueue.qsize() > 100):
+    if(len(spamQueue) > 20):
         spamQueue.pop(0)
 
     # Prevent spam (2 or more identical messages in a row)
