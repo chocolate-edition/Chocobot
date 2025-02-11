@@ -47,13 +47,10 @@ class Curseforge:
                 + Curseforge.CF_PROJECT_ID,
                 headers=Curseforge.headers,
             ).json()
-        Curseforge.cf_file_id = str(
-            Curseforge.cf_project_data["data"]["mainFileId"]
-        )
+
         Curseforge.cf_server_file = (
             "https://www.curseforge.com/minecraft/modpacks/mc-chocolate-edition/files/"
-            + Curseforge.cf_file_id
-            + "/additional-files"
+            + str(Curseforge.cf_project_data ["data"]["latestFiles"][0]["serverPackFileId"])
         )
         return Curseforge.cf_server_file
 
