@@ -104,6 +104,16 @@ async def eyes(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.EYES_RESPONSE)
 
 @bot.command()
+async def backup(ctx: commands.Context[Any]) -> None:
+    """Explains how to access the pack backups"""
+    await ctx.send(constants.FAQ_BACKUP)
+
+@bot.command()
+async def update(ctx: commands.Context[Any]) -> None:
+    """Explains how to update the pack"""
+    await ctx.send(constants.FAQ_UPDATE)
+
+@bot.command()
 async def client(ctx: commands.Context[Any]) -> None:
     """Link to the latest client pack"""
     await ctx.send(curseforge.get_client_file())
