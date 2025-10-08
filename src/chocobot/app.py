@@ -84,6 +84,11 @@ async def log(ctx: commands.Context[Any]) -> None:
     await ctx.send(constants.LOG_RESPONSE)
 
 @bot.command()
+async def logs(ctx: commands.Context[Any]) -> None:
+    """How to get your latest log"""
+    await ctx.send(constants.LOG_RESPONSE)
+
+@bot.command()
 async def java(ctx: commands.Context[Any]) -> None:
     """Link to proper java version"""
     await ctx.send(constants.JAVA_RESPONSE)
