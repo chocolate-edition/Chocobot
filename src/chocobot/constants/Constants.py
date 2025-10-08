@@ -53,7 +53,7 @@ Black: Smite, Projectile Protection"""
 
 **Use mclo.gs:** Go to https://mclo.gs/, paste the contents (Ctrl-V or Cmd-V) into the large field or add the file.
 
-**Submit and Share:** Click "Submit Anonymously." After submitting, copy the URL from the address bar and share it in ⁠https://discord.com/channels/945364406609514517/1139306430046949498 to the person who needs the log. Wait for further instructions."""
+**Submit and Share:** Click "Save", then copy the URL from the address bar and share it in ⁠https://discord.com/channels/945364406609514517/1139306430046949498 to the person who needs the log. Wait for further instructions."""
 
     JAVA_RESPONSE = "Chocolate Edition requires Java 17, [download it here!](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)"
 
