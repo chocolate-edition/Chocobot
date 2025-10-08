@@ -39,9 +39,6 @@ Black: Smite, Projectile Protection"""
 **Start Minecraft:** Open Minecraft and play until you encounter the crash/error. Close Minecraft and keep it closed.
 
 **Find Logs:**
-     **For Vanilla Minecraft (Mojang Launcher):** Open the folder where Minecraft stores its files. On Windows, it's usually
-     located at `%appdata%\\.minecraft`. On macOS, find it at `~/Library/Application Support/minecraft`.
-
      **For CurseForge:** If you're using CurseForge, click on your modpack within CurseForge's launcher. Then click on the
      three dots (...) on the right-hand side and choose "Open Folder."
 
@@ -56,11 +53,14 @@ Black: Smite, Projectile Protection"""
 
 **Use mclo.gs:** Go to https://mclo.gs/, paste the contents (Ctrl-V or Cmd-V) into the large field or add the file.
 
-**Submit and Share:** Click "Submit Anonymously." After submitting, copy the URL from the address bar and share it in ⁠https://discord.com/channels/945364406609514517/1139306430046949498 to the person who needs the log. Wait for further instructions."""
+**Submit and Share:** Click "Save", then copy the URL from the address bar and share it in ⁠https://discord.com/channels/945364406609514517/1139306430046949498 to the person who needs the log. Wait for further instructions."""
 
     JAVA_RESPONSE = "Chocolate Edition requires Java 17, [download it here!](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)"
 
-    CDU_RESPONSE = "The Official Chocolate Edition Server is automatically included on the multiplayer list in game, it is hosted by [Craft Down Under (CDU)](https://discord.gg/playcdu)"
+    CDU_RESPONSE = """
+    Due to low player counts, the CDU hosted server has been shut down. Sorry for the inconvenience. 
+    ~~The Official Chocolate Edition Server is automatically included on the multiplayer list in game, it is hosted by [Craft Down Under (CDU)](https://discord.gg/playcdu)~~
+    """
 
     MCLOGS_RESPONSE = "Please send your log with [mclogs!](https://mclo.gs/)"
 
